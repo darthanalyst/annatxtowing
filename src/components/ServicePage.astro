@@ -38,9 +38,9 @@ if (faqs.length) schema.push(faqNode(faqs));
     <div class="svc-hero-img"><img src={hero} alt={heroAlt} width="1200" height="675" loading="eager" /></div>
   </div></section>
 
-  <section style="padding-top:30px"><div class="wrap prose">
+  <section style="padding-top:30px"><div class="wrap"><div class="prose" style="max-width:780px;margin:0 auto">
     <slot />
-  </div></section>
+  </div></div></section>
 
   <section class="tint"><div class="wrap">
     <div class="sec-head center">
