@@ -1,0 +1,35 @@
+---
+import ServicePage from "../components/ServicePage.astro";
+import { SERVICES } from "../lib/site.js";
+const service = SERVICES.find((s) => s.url === "/flat-tire-changing-anna-tx/");
+const faqs = [
+  { q: "Do I need to have a spare tire?", a: "A good spare makes the roadside fix quick. If your spare is missing or also flat, the operator can tow your vehicle to a tire shop in Anna or nearby instead." },
+  { q: "Can you change a tire on the highway shoulder?", a: "Yes, and it is one of the most common calls on US-75. The operator works with hazard lights and proper positioning so the change is done as safely as possible." },
+  { q: "What if my spare will not hold air?", a: "Then changing it solves nothing, so the better move is a tow to a tire shop. You get that option and a price before anything happens." },
+  { q: "How long does a roadside tire change take?", a: "A straightforward swap usually takes a short while once the operator reaches you. The bigger variable is travel time, and in a compact town like Anna that is usually brief." },
+];
+---
+<ServicePage
+  service={service}
+  title="Flat Tire Changing in Anna, TX"
+  description="Roadside flat tire changing in Anna, TX. A local operator mounts your spare or tows you to a tire shop, 24/7. No membership needed. Call (214) 491-5215."
+  hero="/images/hero-tire.webp"
+  heroAlt="Flat tire and jack beside a car on the shoulder of a road in Anna, TX"
+  lede="A flat on FM-455 or US-75 does not have to strand you. A local operator mounts your spare on the roadside, or tows you to a tire shop if the spare will not do."
+  faqs={faqs}
+>
+  <p class="lead-p">That sudden thump and pull toward the shoulder is never a good feeling, especially in Texas summer heat.</p>
+  <p>Changing a tire on the side of a busy road is harder and riskier than it looks, and on a hot Anna afternoon it is the last thing you want to do in your work clothes. Call Anna Towing and a local operator comes out to handle it, so you can stay clear of traffic while the spare goes on.</p>
+
+  <h2>A safe roadside change</h2>
+  <p>Position matters when you are stopped on US-75 or a fast stretch of SH-5. A local operator pulls in behind you with hazard lights, sets up safely, and swaps the flat for your spare while you wait somewhere out of the way. It is the same job you could do in a driveway, done by someone with the right tools and a buffer between you and passing cars.</p>
+
+  <h2>When the spare is not enough</h2>
+  <p>Plenty of vehicles today carry a compact spare, and some carry none at all. If your spare is missing, damaged, or also flat, mounting it is not the answer. In that case the operator can load your vehicle and tow it to a tire shop in Anna or along the US-75 corridor, so you end up with a real tire instead of a temporary one. You decide which way to go after hearing the options and the price.</p>
+
+  <h2>Anywhere in the Anna area</h2>
+  <p>Flats do not pick convenient spots. Whether you caught one near Natural Springs Park, in the Anna Town Square lot, on a county road at the edge of town, or in your own driveway in Avery Pointe, the operator comes to you. Give the dispatcher a cross street or landmark and help is on the way.</p>
+
+  <h2>Day or night, no membership</h2>
+  <p>Tire trouble at night is especially unnerving on a dark shoulder. Dispatch runs 24 hours a day, and there is no club to join or fee to keep current. You call a local Anna operator, get an upfront estimate, and get back on the road.</p>
+</ServicePage>

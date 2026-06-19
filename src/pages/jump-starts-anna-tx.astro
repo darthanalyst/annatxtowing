@@ -1,0 +1,35 @@
+---
+import ServicePage from "../components/ServicePage.astro";
+import { SERVICES } from "../lib/site.js";
+const service = SERVICES.find((s) => s.url === "/jump-starts-anna-tx/");
+const faqs = [
+  { q: "Can a jump start hurt my car?", a: "Done correctly, no. A local operator connects the leads in the right order and protects your electronics, which is safer than guessing with a stranger's cables in a parking lot." },
+  { q: "My battery keeps dying. Should I just replace it?", a: "If it will not hold a charge, a jump is only a temporary fix. The operator can get you started so you can drive to a shop, or tow the vehicle if it will not stay running." },
+  { q: "Do you jump diesel trucks and bigger vehicles?", a: "Yes. Tell the dispatcher what you are driving so the operator brings equipment suited to your battery and engine size." },
+  { q: "Will the car stay running after a jump?", a: "Usually it will once the alternator takes over, but a weak battery may die again after you shut off. If that happens, a tow to a shop is the next step." },
+];
+---
+<ServicePage
+  service={service}
+  title="Jump Start Service in Anna, TX"
+  description="24/7 jump start service in Anna, TX. A local operator gets your dead battery going in a driveway, parking lot, or roadside. Call (214) 491-5215."
+  hero="/images/hero-jump.webp"
+  heroAlt="Jumper cables connected to a car battery under the hood in Anna, TX"
+  lede="That slow click and nothing more usually means a dead battery. A local Anna operator brings a jump to your driveway, lot, or roadside spot."
+  faqs={faqs}
+>
+  <p class="lead-p">A dead battery always seems to show up on the morning you are already running late.</p>
+  <p>Heat is hard on batteries, and the Texas summers around Anna shorten their lives. One cool night after a hot stretch and the car that started fine yesterday gives you nothing but a click. Call Anna Towing and a local operator brings a jump to wherever you are parked.</p>
+
+  <h2>A safe, correct jump</h2>
+  <p>Jump starting looks simple, but cables hooked up in the wrong order can spark or harm sensitive electronics. A local operator connects everything the right way, gets your engine turning, and makes sure the charge holds before leaving. It is quicker and safer than flagging down a stranger and hoping their cables reach.</p>
+
+  <h2>Driveways, lots, and roadsides</h2>
+  <p>Most jump calls in Anna come from driveways and parking lots, the places cars sit overnight or all day. Whether you are in a garage apartment lot off Rosamond Parkway, the Anna Town Square parking area, a work site, or stopped on the shoulder of US-75, the operator comes to your location with everything needed.</p>
+
+  <h2>When a jump is not the whole story</h2>
+  <p>Sometimes a battery is simply too far gone to hold a charge, or the real problem is the alternator. If your vehicle starts but dies again, or will not turn over even with a strong jump, the operator can tow it to a shop in Anna or nearby so a mechanic can sort it out. You hear that option and the price before deciding.</p>
+
+  <h2>Around the clock in the Anna area</h2>
+  <p>Batteries do not check the time before they quit. Dispatch runs 24 hours a day, 7 days a week, so a no-start at dawn in West Crossing or a dead battery after a late night gets a fast, local answer. One call and an operator is on the way.</p>
+</ServicePage>

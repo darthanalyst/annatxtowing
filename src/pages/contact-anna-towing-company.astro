@@ -1,0 +1,66 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE, SERVICES, breadcrumb } from "../lib/site.js";
+const tel = "tel:" + SITE.phoneTel;
+const schema = [breadcrumb([{ name: "Home", url: "/" }, { name: "Contact", url: "/contact-anna-towing-company/" }])];
+---
+<Base
+  title="Contact Anna Towing | Call (214) 491-5215, Anna, TX"
+  description="Reach Anna Towing 24/7 for towing and roadside assistance in Anna, TX 75409 and nearby towns. Call (214) 491-5215 or email us anytime."
+  path="/contact-anna-towing-company/"
+  schema={schema}
+>
+  <div class="wrap"><nav class="crumbs"><a href="/">Home</a><span>/</span>Contact</nav></div>
+
+  <section class="page-hero"><div class="wrap">
+    <p class="eyebrow">Contact · Anna, TX 75409</p>
+    <h1>Get a tow truck on the way</h1>
+    <p class="lede">The fastest way to reach us is to call. Dispatch is staffed around the clock, so a real person picks up day or night.</p>
+  </div></section>
+
+  <section style="padding-top:20px"><div class="wrap split">
+    <div class="prose">
+      <h2>Call dispatch</h2>
+      <p class="lead-p">When you are stranded, calling beats typing. One call gets you an upfront estimate and a truck headed your way.</p>
+      <div class="hero-cta"><a class="btn btn-call btn-lg" href={tel}><svg><use href="#i-phone"/></svg> Call {SITE.phoneDisplay}</a></div>
+      <ul class="road-list" style="margin-top:24px">
+        <li><span class="rd" style="color:var(--ink)">Phone</span><span class="rn" style="color:var(--ink-2)"><a href={tel} style="color:var(--pine);font-weight:700;text-decoration:none">{SITE.phoneDisplay}</a></span></li>
+        <li><span class="rd" style="color:var(--ink)">Email</span><span class="rn" style="color:var(--ink-2)"><a href={"mailto:" + SITE.email} style="color:var(--pine);font-weight:700;text-decoration:none">{SITE.email}</a></span></li>
+        <li><span class="rd" style="color:var(--ink)">Hours</span><span class="rn" style="color:var(--ink-2)">Open 24 hours, 7 days a week</span></li>
+        <li><span class="rd" style="color:var(--ink)">Area</span><span class="rn" style="color:var(--ink-2)">Anna, TX 75409 and nearby towns</span></li>
+      </ul>
+    </div>
+    <div class="prose">
+      <h2>What to have ready</h2>
+      <p>A few details help the operator reach you faster and bring the right equipment:</p>
+      <ul class="nbhd-list" style="grid-template-columns:1fr;gap:12px;margin-top:6px">
+        <li><svg><use href="#i-check"/></svg> Your location: a US-75 exit, cross street, or neighborhood</li>
+        <li><svg><use href="#i-check"/></svg> The vehicle: make, model, and whether it rolls</li>
+        <li><svg><use href="#i-check"/></svg> The problem: dead battery, flat, lockout, fuel, or a tow</li>
+        <li><svg><use href="#i-check"/></svg> Where you want it taken, if you need a tow</li>
+      </ul>
+      <p style="margin-top:18px">Not sure what you need? Just describe what is happening and the dispatcher will point you the right way.</p>
+    </div>
+  </div></section>
+
+  <section class="tint"><div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Services</p><h2>What we can send</h2></div>
+    <div class="svc-grid">
+      {SERVICES.map((s) => (
+        <a class="svc-card" href={s.url}>
+          <div class="svc-ic"><svg><use href={"#" + s.icon}/></svg></div>
+          <span class="svc-klass">{s.klass}</span>
+          <h3>{s.name}</h3>
+          <p>{s.blurb}</p>
+          <span class="svc-more">Learn more <svg><use href="#i-arrow"/></svg></span>
+        </a>
+      ))}
+    </div>
+  </div></section>
+
+  <section class="callband"><div class="wrap">
+    <h2>Stranded right now?</h2>
+    <p>Do not wait on a form. Call and a local operator starts heading your way.</p>
+    <a class="btn btn-call btn-lg" href={tel}><svg><use href="#i-phone"/></svg> Call {SITE.phoneDisplay}</a>
+  </div></section>
+</Base>

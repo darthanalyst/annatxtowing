@@ -1,0 +1,30 @@
+---
+import Geo from "../components/Geo.astro";
+const area = { name: "Celina", url: "/celina-tx/" };
+const roads = [
+  { road: "FM-455", note: "The direct Anna to Celina link west" },
+  { road: "SH-289", note: "Preston Road through town" },
+  { road: "Dallas Pkwy", note: "Tollway extension on the south side" },
+  { road: "FM-428", note: "Cross-town connector" },
+];
+const faqs = [
+  { q: "How do you get from Anna to Celina?", a: "FM-455 runs west out of Anna straight toward Celina, so a local operator has a direct route. You get a time estimate based on traffic when you call." },
+  { q: "Do you cover Celina's newer communities?", a: "Yes, including the fast-growing neighborhoods off Preston Road and the developments spreading west and south of the old downtown square." },
+  { q: "Is towing in Celina available 24/7?", a: "Yes. Dispatch runs around the clock, every day, including holidays." },
+];
+---
+<Geo
+  area={area}
+  title="Towing & Roadside Assistance in Celina, TX"
+  description="24/7 towing and roadside assistance in Celina, TX from a local Anna-area operator. Flatbed tows, jump starts, lockouts, and fuel. Call (214) 491-5215."
+  hero="/images/hero-area.webp"
+  heroAlt="Tow truck on a road heading toward Celina, TX"
+  lede="Celina is a straight run west of Anna on FM-455. A local operator covers its fast-growing neighborhoods with towing and roadside help, 24/7."
+  roads={roads}
+  faqs={faqs}
+>
+  <p class="lead-p">FM-455 ties Anna and Celina together, running west across the open country between them.</p>
+  <p>Celina is growing as fast as anywhere in the region, and all those new streets and drivers mean more breakdowns, flats, and dead batteries. A local operator who already works the Anna side of FM-455 reaches Celina without a long detour, whether you are near the downtown square, off Preston Road, or in one of the new communities spreading south toward the tollway.</p>
+  <p>The full service list travels to Celina, towing and vehicle recovery, roadside assistance, flat tire changes, jump starts, car lockouts, and fuel delivery. Tell the dispatcher where you are on SH-289, FM-455, or a neighborhood street and the right truck is sent your way.</p>
+  <p>Every call is handled by a licensed and insured local operator with an honest, upfront estimate. As Celina keeps building out, a dependable local tow is one call away.</p>
+</Geo>

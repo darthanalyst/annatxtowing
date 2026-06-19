@@ -1,0 +1,30 @@
+---
+import Geo from "../components/Geo.astro";
+const area = { name: "Melissa", url: "/melissa-tx/" };
+const roads = [
+  { road: "US-75", note: "Central Expressway, the Anna to Melissa run" },
+  { road: "FM-545", note: "Melissa Road across town" },
+  { road: "SH-5", note: "Parallel route through downtown" },
+  { road: "Liberty Way", note: "East-west neighborhood connector" },
+];
+const faqs = [
+  { q: "How fast can you reach Melissa from Anna?", a: "Melissa sits just south of Anna on US-75, so a local operator is typically only minutes away. You get a time estimate when you call." },
+  { q: "Do you cover all of Melissa?", a: "Yes, from the neighborhoods off Liberty Way and Milrany Lane to the US-75 frontage and the stretches along FM-545." },
+  { q: "Is towing in Melissa available overnight?", a: "Yes. Dispatch runs 24 hours a day, every day, including weekends and holidays." },
+];
+---
+<Geo
+  area={area}
+  title="Towing & Roadside Assistance in Melissa, TX"
+  description="24/7 towing and roadside assistance in Melissa, TX from a local Anna-area operator. Flatbed tows, jump starts, lockouts, and more. Call (214) 491-5215."
+  hero="/images/hero-area.webp"
+  heroAlt="Tow truck on a highway near Melissa, TX at dusk"
+  lede="Melissa is the next town south on US-75, and a local operator covers it just like home. Towing and roadside help, 24 hours a day."
+  roads={roads}
+  faqs={faqs}
+>
+  <p class="lead-p">Melissa and Anna share a stretch of US-75 and a lot of the same daily traffic.</p>
+  <p>That makes Melissa easy to reach for a tow operator already working the Anna area. Whether your car gave out near the Melissa Town Center, you caught a flat on FM-545, or a battery died in a driveway off Milrany Lane, help comes from close by rather than crawling up the highway from the city.</p>
+  <p>The same six services available in Anna are available in Melissa, towing and vehicle recovery, roadside assistance, flat tire changes, jump starts, car lockouts, and fuel delivery. Tell the dispatcher where you are along US-75, SH-5, or Liberty Way and what the vehicle is doing, and the right truck is sent.</p>
+  <p>Every job is handled by a licensed and insured local operator, with an upfront estimate before the truck rolls. Melissa keeps growing, and so does the demand for a fast, honest local tow. One call covers it.</p>
+</Geo>

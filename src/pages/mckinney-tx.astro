@@ -1,0 +1,30 @@
+---
+import Geo from "../components/Geo.astro";
+const area = { name: "McKinney", url: "/mckinney-tx/" };
+const roads = [
+  { road: "US-75", note: "Central Expressway, the main Anna to McKinney link" },
+  { road: "US-380", note: "University Drive across the north side" },
+  { road: "SH-5", note: "McDonald Street through town" },
+  { road: "SH-121", note: "Sam Rayburn Tollway to the south" },
+];
+const faqs = [
+  { q: "Do you tow into and around McKinney?", a: "Yes. McKinney is a common destination for tows from Anna, since many shops and dealers sit along US-75 and US-380. A local operator also handles roadside calls across McKinney." },
+  { q: "Can you take my car to a McKinney shop or dealer?", a: "Yes. Pick the shop and the distance is quoted upfront. Many Anna drivers tow to McKinney for repairs and service." },
+  { q: "Is service available at night in McKinney?", a: "Yes, 24 hours a day, 7 days a week, including holidays." },
+];
+---
+<Geo
+  area={area}
+  title="Towing & Roadside Assistance in McKinney, TX"
+  description="24/7 towing and roadside assistance in McKinney, TX from a local Anna-area operator. Tows to McKinney shops and dealers, plus roadside help. Call (214) 491-5215."
+  hero="/images/hero-area.webp"
+  heroAlt="Tow truck on US-75 heading toward McKinney, TX"
+  lede="McKinney sits just down US-75 from Anna, and it is where many local tows end up. Towing, recovery, and roadside help across the city, 24/7."
+  roads={roads}
+  faqs={faqs}
+>
+  <p class="lead-p">McKinney is the big neighbor to the south, and the road between it and Anna runs straight down US-75.</p>
+  <p>Because so many shops, dealers, and body shops line that corridor, McKinney is one of the most common places Anna drivers ask to be towed. A local operator makes that run all the time, so a tow from your Anna driveway to a McKinney repair shop is routine, quoted upfront, and handled with care.</p>
+  <p>Coverage is not limited to tows into the city. If you break down inside McKinney, near the historic downtown square, along US-380, or off SH-5, a local operator responds to roadside calls there too. Jump starts, lockouts, flat tires, and fuel delivery are all part of the service.</p>
+  <p>Whatever the situation, you get a licensed and insured operator and a straight estimate before any work begins. One call connects Anna and McKinney drivers with help that knows both ends of the highway.</p>
+</Geo>

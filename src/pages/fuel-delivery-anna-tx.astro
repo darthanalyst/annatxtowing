@@ -1,0 +1,35 @@
+---
+import ServicePage from "../components/ServicePage.astro";
+import { SERVICES } from "../lib/site.js";
+const service = SERVICES.find((s) => s.url === "/fuel-delivery-anna-tx/");
+const faqs = [
+  { q: "How much fuel do you bring?", a: "Enough to get you to a station and back on your way. You are not buying a full tank, just what you need to reach the nearest pump on US-75 or FM-455." },
+  { q: "Do you carry diesel as well as gas?", a: "Tell the dispatcher what your vehicle takes when you call. Letting the operator know gas or diesel up front avoids a wasted trip." },
+  { q: "I ran out on the highway. Is that safe to wait?", a: "Stay buckled with hazard lights on, well away from traffic if you can. A local operator gets to you quickly so the wait on the shoulder is short." },
+  { q: "What if my car will not start after fueling?", a: "Running completely dry can sometimes cause a hard restart. If it will not fire up after fuel, the same operator can jump it or tow it to a shop." },
+];
+---
+<ServicePage
+  service={service}
+  title="Emergency Fuel Delivery in Anna, TX"
+  description="24/7 emergency fuel delivery in Anna, TX. Ran out of gas on US-75 or FM-455? A local operator brings enough to get you going. Call (214) 491-5215."
+  hero="/images/hero-fuel.webp"
+  heroAlt="Red fuel can beside a car stopped on the roadside in Anna, TX"
+  lede="Out of gas on US-75 or stranded near Anna Town Square? A local operator brings enough fuel to get you to the nearest pump."
+  faqs={faqs}
+>
+  <p class="lead-p">The gauge sits on empty longer than you think it can, and then the engine sputters at the worst possible moment.</p>
+  <p>Maybe the low-fuel light came on miles back and the next station was just a little too far. Maybe a gauge read wrong. Either way, running dry leaves you stranded, and pushing a car down US-75 is not an option. Call Anna Towing and a local operator brings fuel to you.</p>
+
+  <h2>Enough to get you going</h2>
+  <p>Fuel delivery is not about filling your tank on the roadside. The operator brings enough to get your engine running and carry you to the nearest station, where you can top off properly. It is a simple, fast fix that turns a dead stop into a short detour.</p>
+
+  <h2>Gas or diesel, the right fuel</h2>
+  <p>Putting the wrong fuel in a vehicle causes real damage, so the dispatcher will ask what you drive. Let them know whether you need gas or diesel when you call, and the operator arrives with the correct fuel the first time. No guessing, no second trip.</p>
+
+  <h2>Stranded spots around Anna</h2>
+  <p>Empty tanks tend to strike on the longer stretches between stations, out on SH-5, along the county roads at the edge of town, or on US-75 between exits. Wherever you coasted to a stop, give the dispatcher a mile marker, cross street, or landmark like Natural Springs Park, and the operator finds you.</p>
+
+  <h2>Around the clock, no membership</h2>
+  <p>Running out of gas at midnight is more common than anyone admits, and just as stressful as a breakdown. Dispatch runs 24 hours a day with no club to join. You call a local Anna operator, get an upfront price, and a little fuel puts you back on the road. If the car will not restart after running dry, the same operator can jump or tow it.</p>
+</ServicePage>
