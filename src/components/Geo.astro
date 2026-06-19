@@ -1,0 +1,81 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE, SERVICES, breadcrumb, faqNode, serviceNode } from "../lib/site.js";
+const { area, title, description, hero, heroAlt, lede, roads = [], faqs = [] } = Astro.props;
+const tel = "tel:" + SITE.phoneTel;
+const schema = [
+  serviceNode({ name: "Towing in " + area.name + ", TX", serviceType: "Towing service", description, url: area.url, cities: [area.name] }),
+  breadcrumb([
+    { name: "Home", url: "/" },
+    { name: area.name + ", TX", url: area.url },
+  ]),
+];
+if (faqs.length) schema.push(faqNode(faqs));
+---
+<Base title={title} description={description} path={area.url} schema={schema}>
+  <div class="wrap">
+    <nav class="crumbs"><a href="/">Home</a><span>/</span>{area.name}, TX</nav>
+  </div>
+
+  <section class="page-hero"><div class="wrap">
+    <p class="eyebrow">Service area · {area.name}, TX</p>
+    <h1>{title}</h1>
+    <p class="lede">{lede}</p>
+    <div class="hero-cta">
+      <a class="btn btn-call btn-lg" href={tel}><svg><use href="#i-phone"/></svg> Call {SITE.phoneDisplay}</a>
+      <a class="btn btn-ghost btn-lg" href="/services/">See Services</a>
+    </div>
+    <div class="trust-row">
+      <span><svg><use href="#i-clock"/></svg> 24/7 dispatch</span>
+      <span><svg><use href="#i-pin"/></svg> Near Anna, TX</span>
+      <span><svg><use href="#i-shield"/></svg> Licensed &amp; insured</span>
+    </div>
+  </div></section>
+
+  <section style="padding-top:18px"><div class="wrap">
+    <div class="svc-hero-img"><img src={hero} alt={heroAlt} width="1200" height="675" loading="eager" /></div>
+  </div></section>
+
+  <section style="padding-top:30px"><div class="wrap prose">
+    <slot />
+  </div></section>
+
+  {roads.length > 0 && (
+    <section class="pine-band"><div class="wrap">
+      <div class="sec-head"><p class="eyebrow">Roads we run</p><h2>Quick to reach you around {area.name}</h2></div>
+      <ul class="road-list" style="max-width:640px">
+        {roads.map((r) => (<li><span class="rd">{r.road}</span><span class="rn">{r.note}</span></li>))}
+      </ul>
+    </div></section>
+  )}
+
+  <section><div class="wrap">
+    <div class="sec-head"><p class="eyebrow">What we do</p><h2>Towing &amp; roadside in {area.name}</h2></div>
+    <div class="svc-grid">
+      {SERVICES.map((s) => (
+        <a class="svc-card" href={s.url}>
+          <div class="svc-ic"><svg><use href={"#" + s.icon}/></svg></div>
+          <span class="svc-klass">{s.klass}</span>
+          <h3>{s.name}</h3>
+          <p>{s.blurb}</p>
+          <span class="svc-more">Learn more <svg><use href="#i-arrow"/></svg></span>
+        </a>
+      ))}
+    </div>
+  </div></section>
+
+  {faqs.length > 0 && (
+    <section class="tint"><div class="wrap">
+      <div class="sec-head center"><p class="eyebrow" style="justify-content:center">Questions</p><h2>{area.name} towing FAQ</h2></div>
+      <div class="faq-list">
+        {faqs.map((f) => (<details class="faq-item"><summary>{f.q}</summary><p>{f.a}</p></details>))}
+      </div>
+    </div></section>
+  )}
+
+  <section class="callband"><div class="wrap">
+    <h2>Need a tow in {area.name}?</h2>
+    <p>One call connects you with a local tow operator covering {area.name} and the Anna area, 24 hours a day.</p>
+    <a class="btn btn-call btn-lg" href={tel}><svg><use href="#i-phone"/></svg> Call {SITE.phoneDisplay}</a>
+  </div></section>
+</Base>
