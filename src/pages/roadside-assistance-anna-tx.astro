@@ -1,0 +1,35 @@
+---
+import ServicePage from "../components/ServicePage.astro";
+import { SERVICES } from "../lib/site.js";
+const service = SERVICES.find((s) => s.url === "/roadside-assistance-anna-tx/");
+const faqs = [
+  { q: "What counts as roadside assistance?", a: "Jump starts, flat-tire changes, lockouts, and emergency fuel delivery are the common ones. If a simple fix can get you rolling again without a tow, that is roadside assistance." },
+  { q: "Do I need a membership or club to call?", a: "No. There is no membership and no monthly fee. You call when you need help, get an upfront price, and pay for the service you used." },
+  { q: "Can you help in a parking lot, not just the road?", a: "Yes. Driveways, parking lots at Anna Town Square or the Walmart on FM-455, work sites, anywhere in the Anna area a vehicle can be reached." },
+  { q: "What if the problem is bigger than a quick fix?", a: "If roadside help cannot get you moving, the same operator can tow the vehicle to a shop you choose. You only pay for what the job actually needs." },
+];
+---
+<ServicePage
+  service={service}
+  title="Roadside Assistance in Anna, TX"
+  description="24/7 roadside assistance in Anna, TX. Jump starts, flat tires, lockouts, and fuel delivery from a local operator. No membership needed. Call (214) 491-5215."
+  hero="/images/hero-roadside.webp"
+  heroAlt="Tow truck with amber lights stopped behind a disabled car on an Anna, TX roadside"
+  lede="Sometimes you do not need a tow, just a hand. Jump starts, tire changes, lockouts, and fuel, brought to you anywhere in Anna."
+  faqs={faqs}
+>
+  <p class="lead-p">A dead battery or a flat tire should not cost you your whole afternoon.</p>
+  <p>Roadside assistance from Anna Towing connects you with a local operator who can solve the small emergencies right where you are. No membership, no waiting on a club hotline, no truck driving in from another county. You call, you get a price, and help heads your way.</p>
+
+  <h2>The everyday roadside fixes</h2>
+  <p>Most roadside calls in Anna fall into a few buckets. A battery that died overnight in a driveway off Rosamond Parkway. A tire that picked up a screw on FM-455. Keys locked inside at the Anna Town Square parking lot. A fuel gauge that hit empty before you reached the station on US-75. Each of these has a quick answer, and a local operator carries the tools to handle them on the spot.</p>
+
+  <h2>Help that comes to you</h2>
+  <p>The point of roadside assistance is that you should not have to move the vehicle to get help. Whether you are stopped on the shoulder of Central Expressway, parked at Natural Springs Park, or stuck at a work site on the edge of town, the operator comes to your location. Give the dispatcher a cross street or a landmark and they will find you.</p>
+
+  <h2>No membership, no games</h2>
+  <p>You do not need to belong to anything to call. There is no monthly fee and no card to keep in your wallet. You get an upfront estimate for the service you need, and that is what you pay. If it turns out the vehicle needs a tow after all, the same operator can load it and take it to a shop you trust.</p>
+
+  <h2>Around the clock in Anna</h2>
+  <p>Roadside trouble does not wait for daylight. Dispatch runs 24 hours a day, every day of the year, so a 2 a.m. lockout in West Crossing gets the same fast answer as a midday flat near the high school. One call to a local Anna operator and you are back on the road.</p>
+</ServicePage>

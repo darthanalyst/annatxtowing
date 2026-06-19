@@ -1,0 +1,65 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE, SERVICES, AREAS, itemListNode, breadcrumb } from "../lib/site.js";
+const tel = "tel:" + SITE.phoneTel;
+const schema = [
+  itemListNode(SERVICES),
+  breadcrumb([{ name: "Home", url: "/" }, { name: "Services", url: "/services/" }]),
+];
+---
+<Base
+  title="Towing & Roadside Services in Anna, TX | Anna Towing"
+  description="Towing, vehicle recovery, roadside assistance, flat tire changing, jump starts, car lockout, and fuel delivery across Anna, TX 75409. Call (214) 491-5215."
+  path="/services/"
+  schema={schema}
+>
+  <div class="wrap"><nav class="crumbs"><a href="/">Home</a><span>/</span>Services</nav></div>
+
+  <section class="page-hero"><div class="wrap">
+    <p class="eyebrow">Services · Anna, TX 75409</p>
+    <h1>Towing and roadside services in Anna</h1>
+    <p class="lede">Everything a stranded driver in Anna might need, dispatched locally and available 24 hours a day. Pick what fits your situation or just call and describe it.</p>
+    <div class="hero-cta">
+      <a class="btn btn-call btn-lg" href={tel}><svg><use href="#i-phone"/></svg> Call {SITE.phoneDisplay}</a>
+    </div>
+  </div></section>
+
+  <section style="padding-top:24px"><div class="wrap">
+    <div class="svc-grid">
+      {SERVICES.map((s) => (
+        <a class="svc-card" href={s.url}>
+          <div class="svc-ic"><svg><use href={"#" + s.icon}/></svg></div>
+          <span class="svc-klass">{s.klass}</span>
+          <h3>{s.name}</h3>
+          <p>{s.blurb}</p>
+          <span class="svc-more">Learn more <svg><use href="#i-arrow"/></svg></span>
+        </a>
+      ))}
+    </div>
+  </div></section>
+
+  <section class="tint"><div class="wrap">
+    <div class="sec-head center"><p class="eyebrow" style="justify-content:center">How a call works</p><h2>One call, a truck on the way</h2></div>
+    <div class="steps">
+      <div class="step"><h3>Call and tell us where</h3><p>A US-75 exit, a street off FM-455, or your subdivision, plus what the vehicle is doing.</p></div>
+      <div class="step"><h3>A local operator rolls</h3><p>The nearest available Anna tow operator heads out with the right truck and a time estimate.</p></div>
+      <div class="step"><h3>Hooked up and home</h3><p>Your vehicle is loaded with care and taken where you want it, or you are back on the road.</p></div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Coverage</p><h2>Anna and the nearby towns</h2></div>
+    <div class="area-grid">
+      <a class="area-card" href="/"><span class="pin"><svg><use href="#i-home"/></svg></span><span><b>Anna, TX</b><span class="mono-tiny">Home base · 75409</span></span></a>
+      {AREAS.map((a) => (
+        <a class="area-card" href={a.url}><span class="pin"><svg><use href="#i-pin"/></svg></span><span><b>{a.name}, TX</b><span class="mono-tiny">Towing &amp; roadside</span></span></a>
+      ))}
+    </div>
+  </div></section>
+
+  <section class="callband"><div class="wrap">
+    <h2>Not sure which service you need?</h2>
+    <p>Just call and describe what is going on. A local operator will tell you the fastest way to get you moving.</p>
+    <a class="btn btn-call btn-lg" href={tel}><svg><use href="#i-phone"/></svg> Call {SITE.phoneDisplay}</a>
+  </div></section>
+</Base>

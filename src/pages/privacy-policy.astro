@@ -1,0 +1,44 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE, breadcrumb } from "../lib/site.js";
+const schema = [breadcrumb([{ name: "Home", url: "/" }, { name: "Privacy Policy", url: "/privacy-policy/" }])];
+---
+<Base
+  title="Privacy Policy | Anna Towing"
+  description="How Anna Towing handles information from visitors and callers in Anna, TX."
+  path="/privacy-policy/"
+  schema={schema}
+>
+  <div class="wrap"><nav class="crumbs"><a href="/">Home</a><span>/</span>Privacy Policy</nav></div>
+
+  <section class="page-hero"><div class="wrap">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="lede">This policy explains what information Anna Towing collects and how it is used.</p>
+  </div></section>
+
+  <section style="padding-top:24px"><div class="wrap prose" style="max-width:760px;margin:0 auto">
+    <p>Anna Towing ("we," "us") operates this website to help drivers in Anna, TX and nearby towns connect with local towing and roadside service. This policy describes how we handle information when you visit the site or contact us.</p>
+
+    <h2>Information we collect</h2>
+    <p>When you call the number on this site, standard call details such as your phone number may be received so we can return your call and dispatch help. If you email us, we receive the address you write from and any details you choose to share. The site itself may collect basic, non-identifying analytics such as pages viewed and general location, used only to understand traffic and improve the site.</p>
+
+    <h2>How we use information</h2>
+    <p>Information is used to respond to your request, dispatch a local operator, provide an estimate, and follow up about service. We do not sell your personal information. We may share necessary details with the independent local operator who responds to your call so they can locate and assist you.</p>
+
+    <h2>Cookies and analytics</h2>
+    <p>This site may use cookies or similar tools to measure traffic and improve performance. You can set your browser to refuse cookies; the site will still function for reaching us by phone.</p>
+
+    <h2>Third-party links</h2>
+    <p>Pages may link to other websites. We are not responsible for the privacy practices or content of those sites, and we encourage you to read their policies.</p>
+
+    <h2>Your choices</h2>
+    <p>You may contact us to ask what information we hold about you or to request that we delete it. The simplest way to reach us is by phone or email.</p>
+
+    <h2>Updates</h2>
+    <p>We may update this policy from time to time. Changes take effect when posted on this page.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy can be sent to <a href={"mailto:" + SITE.email} style="color:var(--pine);font-weight:600">{SITE.email}</a> or by calling <a href={"tel:" + SITE.phoneTel} style="color:var(--pine);font-weight:600">{SITE.phoneDisplay}</a>.</p>
+  </div></section>
+</Base>

@@ -1,0 +1,29 @@
+---
+import Geo from "../components/Geo.astro";
+const area = { name: "Van Alstyne", url: "/van-alstyne-tx/" };
+const roads = [
+  { road: "US-75", note: "Central Expressway, the Anna to Van Alstyne run north" },
+  { road: "FM-121", note: "Across town toward the east and west" },
+  { road: "SH-5", note: "Parallel route through the older center" },
+];
+const faqs = [
+  { q: "Is Van Alstyne too far for a quick tow?", a: "No. Van Alstyne is just north of Anna on US-75, an easy reach for a local operator. You get a time estimate when you call." },
+  { q: "Do you handle roadside calls in Van Alstyne?", a: "Yes, the full set, jump starts, lockouts, flat tires, and fuel delivery, plus towing and recovery." },
+  { q: "Are you available on weekends in Van Alstyne?", a: "Yes. Dispatch runs 24 hours a day, every day of the year." },
+];
+---
+<Geo
+  area={area}
+  title="Towing & Roadside Assistance in Van Alstyne, TX"
+  description="24/7 towing and roadside assistance in Van Alstyne, TX from a local Anna-area operator. Flatbed tows, jump starts, lockouts, and fuel. Call (214) 491-5215."
+  hero="/images/hero-area.webp"
+  heroAlt="Tow truck on US-75 near Van Alstyne, TX"
+  lede="Van Alstyne is the next town north on US-75, and a local operator reaches it quickly. Towing and roadside help around the clock."
+  roads={roads}
+  faqs={faqs}
+>
+  <p class="lead-p">Head north out of Anna on US-75 and you are in Van Alstyne in a few minutes.</p>
+  <p>That short hop makes Van Alstyne easy for a local operator to cover. Whether you are stopped along the highway frontage, caught a flat on FM-121, or need a tow from a quiet street near the old downtown, help comes from nearby instead of from far down the road.</p>
+  <p>Van Alstyne drivers get the same six services as Anna, towing and vehicle recovery, roadside assistance, flat tire changes, jump starts, car lockouts, and fuel delivery. Give the dispatcher a cross street or a US-75 mile marker and what the vehicle is doing, and the right truck rolls.</p>
+  <p>Each job is handled by a licensed and insured local operator with an upfront estimate. Small town or not, Van Alstyne deserves a fast, fair tow, and one call gets it.</p>
+</Geo>

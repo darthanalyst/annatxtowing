@@ -1,0 +1,30 @@
+---
+import Geo from "../components/Geo.astro";
+const area = { name: "Princeton", url: "/princeton-tx/" };
+const roads = [
+  { road: "US-380", note: "University Drive, the main east-west route" },
+  { road: "FM-982", note: "North-south connector through town" },
+  { road: "FM-75", note: "Older route paralleling US-380" },
+  { road: "Beauchamp Blvd", note: "Cross-town through the newer growth" },
+];
+const faqs = [
+  { q: "Do you reach Princeton from Anna?", a: "Yes. Princeton sits southeast of Anna, an easy connection by way of McKinney and US-380. A local operator covers it with towing and roadside help." },
+  { q: "Can you tow along US-380 in Princeton?", a: "Yes, US-380 is one of the busiest stretches for breakdowns in the area, and it is a regular part of the coverage." },
+  { q: "Is Princeton service available at night?", a: "Yes, 24 hours a day, 7 days a week, including holidays." },
+];
+---
+<Geo
+  area={area}
+  title="Towing & Roadside Assistance in Princeton, TX"
+  description="24/7 towing and roadside assistance in Princeton, TX from a local Anna-area operator. Tows along US-380, jump starts, lockouts, and more. Call (214) 491-5215."
+  hero="/images/hero-area.webp"
+  heroAlt="Tow truck on US-380 near Princeton, TX"
+  lede="Princeton sits southeast of Anna along the US-380 corridor. A local operator covers it with towing and roadside help, around the clock."
+  roads={roads}
+  faqs={faqs}
+>
+  <p class="lead-p">Princeton has exploded with new rooftops along US-380, and busy roads mean more drivers who need a hand.</p>
+  <p>A local operator working the Anna and McKinney area reaches Princeton by way of the same highways that connect the whole northern Collin County stretch. Whether you are stopped on US-380, caught a flat on FM-982, or need a jump in a new subdivision off Beauchamp Boulevard, help comes from the local network rather than from across the metro.</p>
+  <p>Princeton drivers get the complete service list, towing and vehicle recovery, roadside assistance, flat tire changes, jump starts, car lockouts, and fuel delivery. Give the dispatcher your location and what is happening with the vehicle, and the right truck is dispatched.</p>
+  <p>As always, a licensed and insured local operator handles the job with an upfront estimate before any truck rolls. One call covers Princeton and the roads around it.</p>
+</Geo>
