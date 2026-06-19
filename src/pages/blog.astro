@@ -1,0 +1,47 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE, breadcrumb } from "../lib/site.js";
+const tel = "tel:" + SITE.phoneTel;
+const posts = [
+  {
+    title: "What to Do When Your Car Breaks Down in Anna, TX",
+    url: "/anna-towing-tips-what-to-do-when-your-car-breaks-down/",
+    date: "June 12, 2026",
+    excerpt: "A calm, step-by-step guide for Anna drivers: how to get safe, what to tell dispatch, and how to get a tow truck to you fast on US-75, FM-455, or your own street.",
+  },
+];
+const schema = [breadcrumb([{ name: "Home", url: "/" }, { name: "Blog", url: "/blog/" }])];
+---
+<Base
+  title="Anna Towing Blog | Local Tips for Anna, TX Drivers"
+  description="Practical towing and roadside tips for drivers in Anna, TX and the surrounding Collin County towns, from the Anna Towing dispatch team."
+  path="/blog/"
+  schema={schema}
+>
+  <div class="wrap"><nav class="crumbs"><a href="/">Home</a><span>/</span>Blog</nav></div>
+
+  <section class="page-hero"><div class="wrap">
+    <p class="eyebrow">Blog · Anna, TX</p>
+    <h1>Tips for Anna drivers</h1>
+    <p class="lede">Short, useful guides on breakdowns, roadside trouble, and getting help fast around Anna and the nearby towns.</p>
+  </div></section>
+
+  <section style="padding-top:24px"><div class="wrap">
+    <div class="svc-grid">
+      {posts.map((p) => (
+        <a class="svc-card" href={p.url}>
+          <span class="svc-klass">{p.date}</span>
+          <h3>{p.title}</h3>
+          <p>{p.excerpt}</p>
+          <span class="svc-more">Read more <svg><use href="#i-arrow"/></svg></span>
+        </a>
+      ))}
+    </div>
+  </div></section>
+
+  <section class="callband"><div class="wrap">
+    <h2>Need help now, not later?</h2>
+    <p>Skip the reading and call. A local operator is on dispatch 24/7 across Anna.</p>
+    <a class="btn btn-call btn-lg" href={tel}><svg><use href="#i-phone"/></svg> Call {SITE.phoneDisplay}</a>
+  </div></section>
+</Base>

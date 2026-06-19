@@ -1,0 +1,30 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE, SERVICES } from "../lib/site.js";
+const tel = "tel:" + SITE.phoneTel;
+---
+<Base title="Page Not Found | Anna Towing" description="That page could not be found. Call Anna Towing for 24/7 towing and roadside help in Anna, TX." path="/404/">
+  <section class="page-hero"><div class="wrap" style="text-align:center">
+    <p class="eyebrow" style="justify-content:center">Error 404</p>
+    <h1>This road does not lead anywhere</h1>
+    <p class="lede" style="margin:0 auto">The page you were looking for is not here. But if you need a tow in Anna, you are one call away.</p>
+    <div class="hero-cta" style="justify-content:center;margin-top:1.4em">
+      <a class="btn btn-call btn-lg" href={tel}><svg><use href="#i-phone"/></svg> Call {SITE.phoneDisplay}</a>
+      <a class="btn btn-ghost btn-lg" href="/">Back home</a>
+    </div>
+  </div></section>
+
+  <section style="padding-top:10px"><div class="wrap">
+    <div class="sec-head center"><p class="eyebrow" style="justify-content:center">Try these</p><h2>Popular pages</h2></div>
+    <div class="svc-grid">
+      {SERVICES.slice(0, 6).map((s) => (
+        <a class="svc-card" href={s.url}>
+          <div class="svc-ic"><svg><use href={"#" + s.icon}/></svg></div>
+          <span class="svc-klass">{s.klass}</span>
+          <h3>{s.name}</h3>
+          <p>{s.blurb}</p>
+        </a>
+      ))}
+    </div>
+  </div></section>
+</Base>

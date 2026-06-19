@@ -1,0 +1,59 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE, breadcrumb, articleNode } from "../lib/site.js";
+const tel = "tel:" + SITE.phoneTel;
+const url = "/anna-towing-tips-what-to-do-when-your-car-breaks-down/";
+const title = "What to Do When Your Car Breaks Down in Anna, TX";
+const description = "A step-by-step guide for Anna, TX drivers on staying safe during a breakdown, what to tell dispatch, and how to get a tow truck to you fast.";
+const schema = [
+  articleNode({ headline: title, description, url, datePublished: "2026-06-12", dateModified: "2026-06-12" }),
+  breadcrumb([{ name: "Home", url: "/" }, { name: "Blog", url: "/blog/" }, { name: "Car Breakdowns in Anna", url }]),
+];
+---
+<Base title={title + " | Anna Towing"} description={description} path={url} schema={schema}>
+  <div class="wrap"><nav class="crumbs"><a href="/">Home</a><span>/</span><a href="/blog/">Blog</a><span>/</span>Breakdowns in Anna</nav></div>
+
+  <section class="page-hero"><div class="wrap">
+    <p class="eyebrow">Guide · June 12, 2026</p>
+    <h1>{title}</h1>
+    <p class="lede">A breakdown is stressful anywhere. Here is how to stay safe and get help quickly when it happens in Anna.</p>
+  </div></section>
+
+  <section style="padding-top:24px"><div class="wrap prose" style="max-width:760px;margin:0 auto">
+    <p class="lead-p">Cars pick the worst moments to quit. A few calm steps make a breakdown in Anna a lot less of a mess.</p>
+
+    <h2>1. Get yourself somewhere safe</h2>
+    <p>The moment you feel trouble, signal and move toward the shoulder or a parking lot if you can. On US-75 the shoulders are wide, but traffic moves fast, so get as far right as possible. On surface roads like FM-455 or SH-5, aim for a side street or a lot. If the engine dies and you cannot move, turn on your hazard lights right away so other drivers see you.</p>
+
+    <h2>2. Stay buckled and aware</h2>
+    <p>If you are stopped on a busy road, the safest place is usually inside the vehicle with your seatbelt on, especially on the highway. Standing outside near moving traffic is risky. If you must get out, exit on the side away from traffic and stand well back from the road, behind a barrier if one is there.</p>
+
+    <h2>3. Note exactly where you are</h2>
+    <p>This is the step people skip, and it costs the most time. Look for a mile marker, an exit number, a cross street, or a nearby landmark like Natural Springs Park, Anna Town Square, or the Walmart on FM-455. The clearer your location, the faster a tow operator finds you.</p>
+
+    <h2>4. Call for help</h2>
+    <p>Call Anna Towing and tell the dispatcher three things: where you are, what you are driving, and what the vehicle is doing. Is it a dead battery, a flat, an overheated engine, or will it not move at all? Those details decide which truck and tools come out, so the operator arrives ready instead of having to come back.</p>
+
+    <h2>5. Decide where it goes</h2>
+    <p>If the vehicle needs a tow, think about the destination before the truck arrives. Many Anna drivers tow to a trusted mechanic in town or to a shop or dealer down US-75 in McKinney. You choose, and the distance is quoted upfront so the price is clear.</p>
+
+    <h2>A quick local checklist</h2>
+    <ul class="nbhd-list" style="grid-template-columns:1fr;gap:12px">
+      <li><svg><use href="#i-check"/></svg> Hazard lights on the moment something feels wrong</li>
+      <li><svg><use href="#i-check"/></svg> Move to a shoulder, side street, or lot if you can</li>
+      <li><svg><use href="#i-check"/></svg> Stay buckled inside on busy roads like US-75</li>
+      <li><svg><use href="#i-check"/></svg> Pin your location with an exit, cross street, or landmark</li>
+      <li><svg><use href="#i-check"/></svg> Call with your location, vehicle, and the problem</li>
+    </ul>
+
+    <p style="margin-top:20px">Breakdowns are never convenient, but they do not have to ruin your day. Stay calm, get safe, and let a local operator handle the rest. Anna Towing keeps a truck on dispatch around the clock, so help is one call away no matter the hour.</p>
+
+    <div class="hero-cta" style="margin-top:24px"><a class="btn btn-call btn-lg" href={tel}><svg><use href="#i-phone"/></svg> Call {SITE.phoneDisplay}</a></div>
+  </div></section>
+
+  <section class="callband"><div class="wrap">
+    <h2>Broken down right now?</h2>
+    <p>Do not wait it out on the shoulder. A local Anna operator can be on the way in minutes.</p>
+    <a class="btn btn-call btn-lg" href={tel}><svg><use href="#i-phone"/></svg> Call {SITE.phoneDisplay}</a>
+  </div></section>
+</Base>

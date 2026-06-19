@@ -1,0 +1,88 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE, SERVICES, NEIGHBORHOODS, serviceNode, breadcrumb, faqNode } from "../lib/site.js";
+const { service, title, description, hero, heroAlt, lede, faqs = [] } = Astro.props;
+const tel = "tel:" + SITE.phoneTel;
+const related = SERVICES.filter((s) => s.url !== service.url);
+const schema = [
+  serviceNode({ name: service.name, serviceType: service.serviceType, description, url: service.url }),
+  breadcrumb([
+    { name: "Home", url: "/" },
+    { name: "Services", url: "/services/" },
+    { name: service.name, url: service.url },
+  ]),
+];
+if (faqs.length) schema.push(faqNode(faqs));
+---
+<Base title={title} description={description} path={service.url} schema={schema}>
+  <div class="wrap">
+    <nav class="crumbs"><a href="/">Home</a><span>/</span><a href="/services/">Services</a><span>/</span>{service.name}</nav>
+  </div>
+
+  <section class="page-hero"><div class="wrap">
+    <p class="eyebrow">{service.klass} · Anna, TX 75409</p>
+    <h1>{title}</h1>
+    <p class="lede">{lede}</p>
+    <div class="hero-cta">
+      <a class="btn btn-call btn-lg" href={tel}><svg><use href="#i-phone"/></svg> Call {SITE.phoneDisplay}</a>
+      <a class="btn btn-ghost btn-lg" href="/services/">All Services</a>
+    </div>
+    <div class="trust-row">
+      <span><svg><use href="#i-clock"/></svg> 24/7 dispatch</span>
+      <span><svg><use href="#i-pin"/></svg> Local Anna operator</span>
+      <span><svg><use href="#i-shield"/></svg> Licensed &amp; insured</span>
+    </div>
+  </div></section>
+
+  <section style="padding-top:18px"><div class="wrap">
+    <div class="svc-hero-img"><img src={hero} alt={heroAlt} width="1200" height="675" loading="eager" /></div>
+  </div></section>
+
+  <section style="padding-top:30px"><div class="wrap prose">
+    <slot />
+  </div></section>
+
+  <section class="tint"><div class="wrap">
+    <div class="sec-head center">
+      <p class="eyebrow" style="justify-content:center">How a call works</p>
+      <h2>One call, a truck on the way</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Call and tell us where</h3><p>Give us your spot, a US-75 exit, a street off FM-455, or a neighborhood like West Crossing, and what the vehicle is doing.</p></div>
+      <div class="step"><h3>A local operator rolls</h3><p>The nearest available Anna tow operator heads your way with the right truck for the job and a time estimate.</p></div>
+      <div class="step"><h3>Hooked up and home</h3><p>Your vehicle is loaded carefully and taken where you want it, a shop, your driveway, or anywhere nearby.</p></div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap">
+    <div class="sec-head"><p class="eyebrow">More Anna services</p><h2>Other ways we help</h2></div>
+    <div class="svc-grid">
+      {related.map((s) => (
+        <a class="svc-card" href={s.url}>
+          <div class="svc-ic"><svg><use href={"#" + s.icon}/></svg></div>
+          <span class="svc-klass">{s.klass}</span>
+          <h3>{s.name}</h3>
+          <p>{s.blurb}</p>
+          <span class="svc-more">Learn more <svg><use href="#i-arrow"/></svg></span>
+        </a>
+      ))}
+    </div>
+  </div></section>
+
+  {faqs.length > 0 && (
+    <section class="tint"><div class="wrap">
+      <div class="sec-head center"><p class="eyebrow" style="justify-content:center">Questions</p><h2>{service.name} FAQ</h2></div>
+      <div class="faq-list">
+        {faqs.map((f) => (
+          <details class="faq-item"><summary>{f.q}</summary><p>{f.a}</p></details>
+        ))}
+      </div>
+    </div></section>
+  )}
+
+  <section class="callband"><div class="wrap">
+    <h2>Stuck in Anna? Call now.</h2>
+    <p>A local tow operator is on dispatch around the clock for {service.name.toLowerCase()} across Anna and the nearby towns.</p>
+    <a class="btn btn-call btn-lg" href={tel}><svg><use href="#i-phone"/></svg> Call {SITE.phoneDisplay}</a>
+  </div></section>
+</Base>

@@ -1,0 +1,35 @@
+---
+import ServicePage from "../components/ServicePage.astro";
+import { SERVICES } from "../lib/site.js";
+const service = SERVICES.find((s) => s.url === "/car-lockout-anna-tx/");
+const faqs = [
+  { q: "Will opening my car door cause damage?", a: "A local operator uses proper lockout tools designed to open doors without harming the paint, weatherstripping, or window. It is far safer than a coat hanger or a screwdriver." },
+  { q: "My keys are locked in and the car is running. Can you still help?", a: "Yes, and a running locked car is treated as a priority. Tell the dispatcher so the operator knows to come straight out." },
+  { q: "Can you help if I lost my keys entirely?", a: "A lockout gets you into the vehicle. If the keys are truly lost, you may still need a locksmith or dealer for a new key, and the operator can tow the car there if needed." },
+  { q: "Do you open trunks too?", a: "In many cases yes. Let the dispatcher know what you need to reach so the operator arrives with the right approach." },
+];
+---
+<ServicePage
+  service={service}
+  title="Car Lockout Service in Anna, TX"
+  description="24/7 car lockout service in Anna, TX. A local operator opens your locked vehicle without damage, in driveways, lots, and roadsides. Call (214) 491-5215."
+  hero="/images/hero-lockout.webp"
+  heroAlt="Close view of a car door handle and lock on a vehicle in Anna, TX"
+  lede="Keys locked inside? A local Anna operator opens your door with the right tools and no damage, wherever you are stuck."
+  faqs={faqs}
+>
+  <p class="lead-p">There is a particular sinking feeling when the door thunks shut and you see the keys still on the seat.</p>
+  <p>It happens to careful people all the time, in a hurry at the grocery store, juggling kids and bags, or with the engine running on a cold start. Call Anna Towing and a local operator comes out to get you back into your vehicle without the panic and without the damage.</p>
+
+  <h2>Opened the right way</h2>
+  <p>The internet is full of bad lockout advice, and most of it ends with a scratched door, a bent frame, or a broken window. A local operator carries proper lockout tools made to slip past the door safely and pop the lock without marking your vehicle. It is quick, clean, and a lot cheaper than the body work a coat hanger can cause.</p>
+
+  <h2>A running car or a child inside</h2>
+  <p>Some lockouts are urgent. A car left running burns fuel and is a theft risk, and a pet or child locked inside on a hot Anna day is an emergency. Tell the dispatcher right away if that is your situation, and the operator treats it as a priority and heads straight to you. If a child is in danger, call 911 first.</p>
+
+  <h2>Wherever you got stuck</h2>
+  <p>Lockouts happen in the most ordinary places. The Walmart lot on FM-455, a driveway in Lakeview, the parking area at Slayter Creek Park, a spot along Powell Parkway. The operator comes to your location anywhere in the Anna area, so you do not have to find a ride or leave your car behind.</p>
+
+  <h2>Any hour, no membership</h2>
+  <p>Lockouts love bad timing, late at night, early in the morning, the middle of a busy errand. Dispatch runs 24 hours a day, with no membership and no fee to keep up. You call a local Anna operator, hear the price upfront, and you are back in your seat in short order.</p>
+</ServicePage>

@@ -1,0 +1,63 @@
+---
+import Base from "../layouts/Base.astro";
+import { SITE, NEIGHBORHOODS, breadcrumb } from "../lib/site.js";
+const tel = "tel:" + SITE.phoneTel;
+const schema = [breadcrumb([{ name: "Home", url: "/" }, { name: "About", url: "/about-anna-towing-company/" }])];
+---
+<Base
+  title="About Anna Towing | Local Tow Dispatch in Anna, TX"
+  description="Anna Towing connects Anna, TX drivers with licensed, insured local tow operators 24/7. Learn how our hometown dispatch works and the area we cover."
+  path="/about-anna-towing-company/"
+  schema={schema}
+>
+  <div class="wrap"><nav class="crumbs"><a href="/">Home</a><span>/</span>About</nav></div>
+
+  <section class="page-hero"><div class="wrap">
+    <p class="eyebrow">About · Anna, TX</p>
+    <h1>A hometown tow line for Anna drivers</h1>
+    <p class="lede">Anna Towing connects drivers in Anna and the nearby towns with licensed, insured local tow operators, any hour of any day.</p>
+    <div class="hero-cta"><a class="btn btn-call btn-lg" href={tel}><svg><use href="#i-phone"/></svg> Call {SITE.phoneDisplay}</a></div>
+  </div></section>
+
+  <section style="padding-top:18px"><div class="wrap">
+    <div class="media" style="max-width:980px;margin:0 auto"><img src="/images/hero-about.webp" alt="Tow truck hook and controls in detail, Anna, TX" width="1200" height="675" loading="eager" /></div>
+  </div></section>
+
+  <section style="padding-top:34px"><div class="wrap split">
+    <div class="prose">
+      <p class="eyebrow">Why we exist</p>
+      <h2>Local help, without the runaround</h2>
+      <p class="lead-p">When you are stranded in Anna, you want a real person and a nearby truck, not a national hotline.</p>
+      <p>Anna Towing is built around one simple idea: a driver in trouble should be able to make a single call and reach a local operator who knows the town. We connect you with licensed, insured tow operators working the Anna area, so help comes from close by and arrives without a long wait.</p>
+      <p>There is no membership to buy and no club to join. You call when something goes wrong, you hear an upfront estimate, and a truck is dispatched. It is the way getting unstuck should work.</p>
+    </div>
+    <div class="prose">
+      <p class="eyebrow">How it works</p>
+      <h2>One call, handled locally</h2>
+      <p>Tell us where you are, anywhere from US-75 to a side street in {NEIGHBORHOODS[0]}, and what your vehicle is doing. We match you with the nearest available operator carrying the right equipment, whether that is a flatbed, a wheel-lift, or roadside tools for a jump, a lockout, a flat, or fuel.</p>
+      <p>Every operator we connect you with is licensed and insured, and every job comes with a clear estimate before any work begins. You stay in control of where your vehicle goes and what you pay.</p>
+    </div>
+  </div></section>
+
+  <section class="pine-band"><div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Where we work</p><h2>Anna first, plus the towns around it</h2></div>
+    <p style="color:#D6E4D7;max-width:60ch">Coverage centers on Anna, TX 75409 and every neighborhood in it, then reaches out to Melissa, McKinney, Van Alstyne, Celina, and Princeton along the US-75 corridor and FM-455.</p>
+    <div class="nbhd-tags" style="margin-top:14px">{NEIGHBORHOODS.map((n) => (<span>{n}</span>))}</div>
+  </div></section>
+
+  <section><div class="wrap">
+    <div class="sec-head center"><p class="eyebrow" style="justify-content:center">What we stand on</p><h2>Simple promises</h2></div>
+    <div class="feature-grid">
+      <div class="feat"><span class="fi"><svg><use href="#i-clock"/></svg></span><div><h3>Always answered</h3><p>Dispatch runs 24 hours a day, 7 days a week, holidays included.</p></div></div>
+      <div class="feat"><span class="fi"><svg><use href="#i-pin"/></svg></span><div><h3>Local knowledge</h3><p>Operators who already know Anna's roads and neighborhoods reach you faster.</p></div></div>
+      <div class="feat"><span class="fi"><svg><use href="#i-shield"/></svg></span><div><h3>Licensed and insured</h3><p>Your vehicle is handled by properly credentialed local operators.</p></div></div>
+      <div class="feat"><span class="fi"><svg><use href="#i-bolt"/></svg></span><div><h3>Upfront pricing</h3><p>You hear the estimate before a truck rolls. No surprises on arrival.</p></div></div>
+    </div>
+  </div></section>
+
+  <section class="callband"><div class="wrap">
+    <h2>Save the number before you need it</h2>
+    <p>Keep Anna Towing in your phone so help is one tap away the next time a Collin County drive goes sideways.</p>
+    <a class="btn btn-call btn-lg" href={tel}><svg><use href="#i-phone"/></svg> Call {SITE.phoneDisplay}</a>
+  </div></section>
+</Base>
